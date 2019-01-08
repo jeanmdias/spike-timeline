@@ -88,10 +88,10 @@ aside {
   background: #E0DEE0;
   content: "";
 }
-.timeline__event.is--monday:before {
+.timeline__event.is--bold:before {
   background-color: #C2C2C2;
 }
-.timeline__event.is--weekend:before {
+.timeline__event.is--empty:before {
   width: 11px;
 }
 .timeline__event__date {
@@ -102,7 +102,7 @@ aside {
   font-size: .8rem;
   transition: opacity .2s ease-in;
 }
-.timeline__event.is--first-day .timeline__event__date, .timeline__event.is--today .timeline__event__date, .timeline__event.is--last-day .timeline__event__date, .timeline__event:hover .timeline__event__date, .timeline__event:focus .timeline__event__date {
+.timeline__event.is--fixed .timeline__event__date, .timeline__event.is--today .timeline__event__date, .timeline__event.is--last-day .timeline__event__date, .timeline__event:hover .timeline__event__date, .timeline__event:focus .timeline__event__date {
   opacity: 1;
   transition: opacity .2s ease-in;
 }
@@ -125,13 +125,13 @@ aside {
 .dot__icon.is--waiting {
   width: 10px;
 }
-.is--complete .dot {
+.is--blue .dot {
   background-color: #5D8EFF;
   border: none;
 }
 
 .is--green .dot {
-  background-color: rgb(109, 248, 167);
+  background-color: rgb(4, 190, 66);
   border: none;
 }
 
@@ -160,12 +160,19 @@ aside {
   animation: scaleDown 1s ease-in-out;
   animation-fill-mode: forwards;
 }
-.filled__line__completed {
+.filled__line__blue {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   background: #5D8EFF;
+}
+.filled__line__green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(4, 190, 66);
 }
 
 /*
@@ -180,14 +187,7 @@ aside {
     opacity: 0;
   }
 }
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 @-webkit-keyframes scaleDown {
   0% {
     -webkit-transform: scaleY(0);
